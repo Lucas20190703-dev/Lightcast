@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="60dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="horizontal"
+    android:gravity="center"
+    android:paddingHorizontal="12dp"
+    android:paddingVertical="3dp"
+    android:background="@color/FlatWhite"
+    >
+    <androidx.cardview.widget.CardView
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/search_suggester_cell_image_height"
+        app:cardCornerRadius="5dp"
+        app:cardPreventCornerOverlap="true"
+        app:cardElevation="0dp"
+        >
+        <ImageView
+            android:id="@+id/avatarImageView"
+            android:layout_width="@dimen/search_suggester_cell_image_height"
+            android:layout_height="@dimen/search_suggester_cell_image_height"
+            android:src="@drawable/default_album_art"
+            />
+    </androidx.cardview.widget.CardView>
+
+    <TextView
+        android:id="@+id/podcastTitleTextView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="12dp"
+        android:textColor="@color/color_text_dark"
+        android:textSize="18sp"
+        />
+</LinearLayout>

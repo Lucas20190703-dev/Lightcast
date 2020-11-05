@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <item>
+        <shape android:shape="rectangle">
+            <solid android:color="@color/release_cell_button_group_background_color" />
+            <corners android:bottomRightRadius="@dimen/release_cell_background_radius"
+                android:bottomLeftRadius="@dimen/release_cell_background_radius"/>
+        </shape>
+    </item>
+</selector>

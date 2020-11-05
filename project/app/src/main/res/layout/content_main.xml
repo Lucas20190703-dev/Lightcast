@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_marginBottom="@dimen/bottom_nav_height"
+    android:id="@+id/contentCoordinatorLayout"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    >
+    <com.blueshark.lightcast.ui.component.slidinguppanel.SlidingUpPanelLayout
+        xmlns:sothree="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/sliding_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="bottom"
+        sothree:fadeColor="@android:color/transparent"
+        sothree:panelHeight="60dp"
+        sothree:shadowHeight="5dp"
+        sothree:dragViewClickable="false"
+        >
+
+        <androidx.fragment.app.FragmentContainerView
+            android:id="@+id/mainFragmentContainer"
+            android:name="androidx.navigation.fragment.NavHostFragment"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:defaultNavHost="true"
+            />
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="360dp"
+            android:id="@+id/quickcontrols_container"
+            android:visibility="gone">
+        </FrameLayout>
+
+    </com.blueshark.lightcast.ui.component.slidinguppanel.SlidingUpPanelLayout>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="250dp"
+        android:id="@+id/search_suggester_container"
+        android:background="@android:color/white"
+        android:elevation="10dp"
+        android:visibility="gone" />
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

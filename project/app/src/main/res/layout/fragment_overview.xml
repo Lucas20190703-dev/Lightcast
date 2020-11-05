@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/color_fragment_background">
+    <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/refreshLayout"
+        tools:context=".ui.overview.PodcastOverviewFragment"
+        android:background="@color/color_fragment_background">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scrollbars="vertical"
+            />
+    </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/progressLoaderLayout"
+        android:background="@color/color_fragment_background"
+        android:visibility="gone">
+        <ProgressBar
+            android:id="@+id/progressLoader"
+            style="?android:attr/progressBarStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:visibility="gone" />
+    </RelativeLayout>
+    <include layout="@layout/empty_layout"
+        android:id="@+id/emptyView"
+        android:visibility="gone"/>
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

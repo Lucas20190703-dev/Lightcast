@@ -1,0 +1,96 @@
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="app_name">Lightcast</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_title">Android Studio</string>
+    <string name="nav_header_subtitle">android.studio@android.com</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="action_settings">Settings</string>
+    <string name="action_search">Search</string>
+    <string name="search_placeholder">Enter Keyword</string>
+
+    <string name="home_second">Home Second</string>
+    <string name="login_to">Login to</string>
+    <string name="your_account">Your Account</string>
+    <string name="email_address">Email Address</string>
+    <string name="send">Send</string>
+    <string name="confirm">Confirm</string>
+    <string name="resend">Resend</string>
+    <string name="second">S</string>
+    <string name="password">Password</string>
+    <string name="login">Login</string>
+    <string name="register">Register</string>
+    <string name="not_a_member">Not a member?</string>
+    <string name="signup_underline"><u>Sign Up</u></string>
+    <string name="signup">Sign Up</string>
+    <string name="forgot_password"><u>Forgot Password?</u></string>
+    <string name="new_account">New Account</string>
+    <string name="user_name">User Name</string>
+    <string name="first_name">First Name</string>
+    <string name="last_name">Last Name</string>
+    <string name="confirm_password">Confirm Password</string>
+    <string name="already_have_account">Already have an account?</string>
+    <string name="new_release">New Release</string>
+    <string name="in_progress">In Progress</string>
+    <string name="subscriptions">Subscriptions</string>
+    <string name="bookmark">Bookmark</string>
+    <string name="listen_later">Listen Later</string>
+    <string name="last_play_date">Last Play Date</string>
+    <string name="last_play_time">Last Play Time</string>
+    <string name="added_date">Added Date</string>
+    <string name="released_date">Released Date</string>
+    <string name="booked_date">Booked Date</string>
+    <string name="booked_time">Booked Time</string>
+    <string name="collections">Collections</string>
+    <string name="account">Account</string>
+    <string name="public_profile">Public profile</string>
+    <string name="logout">Logout</string>
+    <string name="cart">Cart</string>
+    <string name="podcast_overview">Podcast Overview</string>
+    <string name="search_podcast_overview">Search Podcast Overview</string>
+    <string name="episode_overview">Episode Overview</string>
+    <string name="search_episode_overview">Search Episode Overview</string>
+    <string name="transcribe">Transcribe</string>
+    <string name="data_loading_failed">Data loading failed.</string>
+
+    <string name="now_playing_no_track_selected">\"No current track selected.</string>
+    <string name="error_playing_track">Error Playing track</string>
+
+    <!--do not translate these strings-->
+    <string name="combine_two_strings" translatable="false">%1$s | %2$s</string>
+    <string name="duration_format" translatable="false"><xliff:g id="hours">%1$s</xliff:g> <xliff:g id="minutes">%2$s</xliff:g></string>
+    <string name="durationformatshort" translatable="false"><xliff:g id="format">%2$d:%3$02d</xliff:g></string>
+    <string name="durationformatlong" translatable="false"><xliff:g id="format">%1$d:%2$02d:%3$02d</xliff:g></string>
+
+    <string name="playing_notification_name">Playing Notification</string>
+    <string name="playing_notification_description">The playing notification provides actions for play/pause etc.</string>
+    <string name="unplayable_file">Couldn\u2019t play this episode.</string>
+    <string name="audio_focus_denied">Audio focus denied.</string>
+
+    <string name="action_play_pause">Play/Pause</string>
+    <string name="action_previous">Previous</string>
+    <string name="action_next">Next</string>
+    <string name="loading_failed_please_retry">Loading Failed, please retry.</string>
+    <string name="description">DESCRIPTION</string>
+    <string name="episode_description">Episode Description:</string>
+
+    <string name="player_speed_prompt">Choose a speed</string>
+    <string-array name="player_speed">
+        <item>0.5x</item>
+        <item>0.8x</item>
+        <item>1.0x</item>
+        <item>1.2x</item>
+        <item>1.3x</item>
+        <item>1.4x</item>
+        <item>1.5x</item>
+        <item>1.6x</item>
+        <item>1.7x</item>
+        <item>1.8x</item>
+        <item>1.9x</item>
+        <item>2.0x</item>
+        <item>2.3x</item>
+        <item>2.5x</item>
+        <item>2.7x</item>
+        <item>3.0x</item>
+    </string-array>
+</resources>

@@ -1,0 +1,66 @@
+package com.blueshark.lightcast.networking
+
+import android.net.Uri
+import com.blueshark.lightcast.listener.RequestDataReceiver
+import com.blueshark.lightcast.consts.JSON
+import com.blueshark.lightcast.model.RequestParams
+import okhttp3.*
+import okhttp3.RequestBody.Companion.toRequestBody
+import org.json.JSONObject
+import java.io.IOException
+
+
+class InProgressService : BaseNetWorkService(){
+
+    override fun fetchData(params: Any?, callback : Any?) {
+        val parameters = params as RequestParams?
+        val url = Uri.Builder().scheme(URL_SCHEME)
+            .authority(URL_AUTHORITY)
+            .appendPath(URL_PATH_1)
+            .appendPath(URL_PATH_2)
+            .appendPath(URL_PATH_3)
+            .appendPath(URL_API)
+            .appendQueryParameter(URL_QUERY_PARAM_OFFSET_KEY, parameters?.offset.toString())
+            .appendQueryParameter(URL_QUERY_PARAM_SIZE_KEY, parameters?.size.toString())
+            .build().toString()
+
+        val json = JSONObject()
+//        json.put(URL_QUERY_PARAM_OFFSET_KEY, parameters?.offset)
+//        json.put(URL_QUERY_PARAM_SIZE_KEY, parameters?.size)
+
+        val body: RequestBody = json.toString().toRequestBody(JSON)
+
+        val request = Request.Builder()
+            .headers(headers!!)
+            .url(url)
+            .post(body)
+            .build()
+
+        client?.newCall(request)?.enqueue(object : Callback {
+            override fun onFailure(call: Call, e: IOException) {
+                e.printStackTrace()
+                (callback as RequestDataReceiver?)?.onFailed(e)
+            }
+
+            override fun onResponse(call: Call, response: Response) {
+                if (response.isSuccessful) {
+                    (callback as RequestDataReceiver?)?.onDataReceived(response.body!!.string())
+                }
+                else {
+                    (callback as RequestDataReceiver?)?.onFailed()
+                }
+            }
+        })
+    }
+
+    companion object {
+        private const val URL_SCHEME = "https"
+        private const val URL_AUTHORITY = "api.light.sx"
+        private const val URL_PATH_1 = "ext-api"
+        private const val URL_PATH_2 = "v1"
+        private const val URL_PATH_3 = "podcast"
+        private const val URL_API = "getInprogressEpisode"
+        private const val URL_QUERY_PARAM_OFFSET_KEY = "offset"
+        private const val URL_QUERY_PARAM_SIZE_KEY = "size"
+    }
+}

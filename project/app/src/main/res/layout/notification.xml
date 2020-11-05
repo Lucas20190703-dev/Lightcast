@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--This FrameLayout IS necessary in order tp prevent fucking TouchWiz to interpret the "background="#00000000" as making the whole notification transparent-->
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="90dp">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="90dp">
+
+        <ImageView
+            android:id="@+id/gradient_image"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="fitStart"
+            />
+
+        <ImageView
+            android:id="@+id/image"
+            android:layout_width="90dp"
+            android:layout_height="90dp"
+            android:scaleType="fitStart"
+            android:src="@drawable/ic_notification_small"
+            tools:ignore="ContentDescription" />
+
+        <LinearLayout android:id="@+id/media_titles"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="fill_vertical"
+            android:paddingStart="5dp"
+            android:paddingLeft="5dp"
+            android:paddingEnd = "0dp"
+            android:paddingRight="0dp"
+            android:layout_weight="3"
+            android:minHeight="90dp"
+            android:orientation="vertical"
+            android:layout_toEndOf="@id/image"
+            android:layout_toStartOf="@id/media_actions">
+
+            <TextView
+                android:id="@+id/episodeNameTextView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:ellipsize="marquee"
+                android:fadingEdge="horizontal"
+                android:gravity="center_vertical"
+                android:singleLine="true"
+                tools:ignore="NestedWeights" />
+            <TextView
+                android:id="@+id/podcastNameTextView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_weight="1"
+                android:ellipsize="marquee"
+                android:gravity="center_vertical"
+                android:fadingEdge="horizontal"
+                android:singleLine="true"
+                android:textColor="@color/color_text_dark_gray"
+                />
+
+            <TextView
+                android:id="@+id/authorNameTextView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_weight="1"
+                android:ellipsize="marquee"
+                android:gravity="center_vertical"
+                android:fadingEdge="horizontal"
+                android:singleLine="true"
+                android:textColor="@color/color_text_dark_gray"
+                />
+        </LinearLayout>
+
+        <LinearLayout android:id="@+id/media_actions"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_gravity="center_vertical|end"
+            android:layout_marginEnd="6dp"
+            android:layout_marginRight="6dp"
+            android:layoutDirection="ltr"
+            android:orientation="horizontal"
+            android:layout_alignParentEnd="true"
+            tools:ignore="UnusedAttribute">
+            <!-- media buttons will be added here -->
+            <ImageButton android:id="@+id/backwardButton"
+                style="@style/Widget.AppCompat.Button.Borderless"
+                android:layout_width="44dp"
+                android:layout_height="44dp"
+                android:layout_marginLeft="2dp"
+                android:layout_marginRight="2dp"
+                android:layout_gravity="center"
+                android:layout_weight="1"
+                android:background="@drawable/notification_selector"
+                android:gravity="center"
+                android:padding="8dp"
+                android:scaleType="fitCenter"
+                tools:ignore="ContentDescription" />
+
+            <ImageButton android:id="@+id/action_play_pause"
+                style="@style/Widget.AppCompat.Button.Borderless"
+                android:layout_width="44dp"
+                android:layout_height="44dp"
+                android:layout_gravity="center"
+                android:layout_marginLeft="2dp"
+                android:layout_marginRight="2dp"
+                android:layout_weight="1"
+                android:background="@drawable/notification_selector"
+                android:gravity="center"
+                android:padding="8dp"
+                android:scaleType="fitCenter"
+                tools:ignore="ContentDescription" />
+
+
+            <ImageButton android:id="@+id/forwardButton"
+                style="@style/Widget.AppCompat.Button.Borderless"
+                android:layout_width="44dp"
+                android:layout_height="44dp"
+                android:layout_gravity="center"
+                android:layout_marginLeft="2dp"
+                android:layout_marginRight="2dp"
+                android:layout_weight="1"
+                android:background="@drawable/notification_selector"
+                android:gravity="center"
+                android:padding="8dp"
+                android:scaleType="fitCenter"
+                tools:ignore="ContentDescription" />
+        </LinearLayout>
+
+<!--        <LinearLayout android:id="@+id/root"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="match_parent"-->
+<!--            android:baselineAligned="true"-->
+<!--            android:orientation="horizontal"-->
+<!--            tools:ignore="UselessParent">-->
+
+<!--            -->
+<!--        </LinearLayout>-->
+    </RelativeLayout>
+</FrameLayout>

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/nav_release"
+        android:icon="@drawable/ic_fiber_new_black_24dp"
+        android:enabled="true"
+        android:title="@string/new_release" />
+    <item
+        android:id="@+id/nav_in_progress"
+        android:icon="@drawable/ic_history_black_24dp"
+        android:enabled="true"
+        android:title="@string/in_progress" />
+    <item
+        android:id="@+id/nav_subscription"
+        android:enabled="true"
+        android:icon="@drawable/ic_subscriptions_black_24dp"
+        android:title="@string/subscriptions" />
+
+    <item
+        android:id="@+id/nav_listen_later"
+        android:enabled="true"
+        android:icon="@drawable/ic_headset_black_24dp"
+        android:title="@string/listen_later" />
+
+    <item
+        android:id="@+id/nav_bookmark"
+        android:enabled="true"
+        android:icon="@drawable/bookmark"
+        android:title="@string/bookmark" />
+
+</menu>

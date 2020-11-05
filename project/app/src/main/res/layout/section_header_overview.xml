@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical">
+
+    <FrameLayout
+        android:id="@+id/headerImageViewLayout"
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
+        app:layout_constraintTop_toTopOf="parent"
+        >
+        <ImageView
+            android:id="@+id/headerImageView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="centerCrop"
+            android:adjustViewBounds = "true"
+            android:src="@drawable/default_album_art"
+            android:elevation="0dp"
+            />
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:layout_gravity="bottom"
+            android:background="@drawable/transparent_gradient"
+            />
+    </FrameLayout>
+
+
+    <LinearLayout
+        android:id="@+id/titleLinearLayout"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:orientation="vertical"
+        android:gravity="bottom"
+        android:paddingHorizontal="12dp"
+        android:paddingTop="10dp"
+        android:paddingBottom="45dp"
+        app:layout_constraintBottom_toBottomOf="@id/headerImageViewLayout"
+        >
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="30dp">
+            <TextView
+                android:id="@+id/episodeTitleTextView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@android:color/white"
+                android:textSize="@dimen/overview_title_font_size"
+                android:textStyle="bold"
+                />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="20dp"
+            android:orientation="horizontal"
+            android:layout_marginTop="15dp"
+            android:layout_marginBottom="10dp">
+            <TextView
+                android:id="@+id/podcastSubTitleTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:maxWidth="200dp"
+                android:singleLine="true"
+                android:textColor="@color/toolbar_back"
+                android:textSize="13sp"
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text= "-"
+                android:textColor="@color/toolbar_back"
+                android:paddingHorizontal="20dp"
+                />
+
+            <TextView
+                android:id="@+id/episodeCountTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:textColor="@android:color/white"
+                />
+        </LinearLayout>
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingHorizontal="20dp"
+        android:orientation="vertical"
+        android:background="@drawable/top_left_corner_radius_30"
+        android:paddingVertical="20dp"
+        android:layout_marginTop="170dp"
+        app:layout_constraintTop_toTopOf="@id/titleLinearLayout"
+        >
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text = "@string/description"
+            android:textColor="@color/color_text_dark"
+            android:textSize="18sp"
+            android:gravity="start|center"
+            android:paddingHorizontal="5dp"
+            />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginTop="15dp"
+            android:layout_marginBottom="10dp"
+            android:background="@color/color_light_gray"
+            />
+
+        <TextView
+            android:id="@+id/descriptionTextView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textIsSelectable="true"
+            android:text="Live Stronger. Live longer. The world's first radio show dedicated to fitness and nutrition, longevity and human performance,"
+            />
+
+    </LinearLayout>
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/subscribeButton"
+        android:layout_width="wrap_content"
+        android:layout_height="40dp"
+        android:layout_marginTop="150dp"
+        app:layout_constraintTop_toTopOf="@id/titleLinearLayout"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:paddingStart="15dp"
+        android:paddingEnd = "10dp"
+        android:textAllCaps="false"
+        android:text = "+ Subscribe"
+        android:textSize="16sp"
+        android:textColor="@android:color/white"
+        android:background="@drawable/subscribe_button_selectable"
+        />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

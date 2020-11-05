@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="200dp"
+    android:adjustViewBounds = "true"
+
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.fragment.app.FragmentContainerView
+        android:id="@+id/player_host_fragment"
+        android:name="androidx.navigation.fragment.NavHostFragment"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:defaultNavHost="true"
+        app:navGraph="@navigation/nav_player"
+        />
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

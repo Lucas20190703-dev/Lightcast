@@ -1,0 +1,212 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!--This FrameLayout IS necessary in order tp prevent fucking TouchWiz to interpret the "background="#00000000" as making the whole notification transparent-->
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="256dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <RelativeLayout
+        android:id="@+id/root"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:ignore="UselessParent">
+
+        <ImageView
+            android:id="@+id/image"
+            android:layout_width="256dp"
+            android:layout_height="256dp"
+            android:scaleType="centerCrop"
+            android:layout_alignParentEnd="true"
+            tools:ignore="ContentDescription" />
+
+
+        <ImageView
+            android:id="@+id/gradient_image"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="fitStart"
+            />
+
+
+        <ImageButton android:id="@+id/action_quit"
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            android:layout_alignParentEnd="true"
+            android:layout_margin="5dp"
+            android:background="@drawable/notification_selector"
+            android:padding="6dp"
+            android:scaleType="fitCenter"
+            tools:ignore="ContentDescription" />
+
+        <LinearLayout
+            android:id="@+id/app_name_layout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="18dp"
+            android:layout_marginStart="16dp"
+            android:orientation="horizontal"
+            android:layout_gravity="center"
+            android:gravity="center">
+            <ImageView
+                android:id="@+id/lightcastImage"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:text = "@string/app_name"
+                android:textColor="@color/FlatWhite"
+                android:gravity="center"
+                android:textSize="14sp"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/media_titles"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            android:layout_below="@id/app_name_layout"
+            android:layout_toStartOf="@id/action_quit"
+            android:layout_marginTop="8dp"
+            android:minHeight="64dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/episodeNameTextView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ellipsize="marquee"
+                android:fadingEdge="horizontal"
+                android:singleLine="true"
+                android:textStyle="bold"
+                android:textSize="18sp"
+                android:textAppearance="@style/Theme.Phonograph.Notification.Title" />
+
+            <TextView
+                android:id="@+id/podcastNameTextView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:minHeight="20dp"
+                android:layout_marginBottom="3dp"
+                android:layout_marginTop="3dp"
+                android:ellipsize="marquee"
+                android:fadingEdge="horizontal"
+                android:singleLine="true"
+                android:textSize="14sp"
+                android:textAppearance="@style/Theme.Phonograph.Notification" />
+
+            <TextView
+                android:id="@+id/authorNameTextView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:ellipsize="marquee"
+                android:fadingEdge="horizontal"
+                android:singleLine="true"
+                android:textSize="14sp"
+                android:textAppearance="@style/Theme.Phonograph.Notification" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/media_actions"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:layout_below="@+id/media_titles"
+            android:paddingHorizontal="12dp"
+            android:layoutDirection="ltr"
+            android:orientation="horizontal"
+            tools:ignore="UnusedAttribute">
+            <!-- media buttons will be added here -->
+            <ImageButton android:id="@+id/backwardButton"
+                style="@style/Widget.AppCompat.Button.Borderless"
+                android:layout_width="48dp"
+                android:layout_height="match_parent"
+                android:layout_marginStart="12dp"
+                android:layout_weight="1"
+                android:background="@drawable/notification_selector"
+                android:gravity="center"
+                android:padding="8dp"
+                android:scaleType="fitCenter"
+                tools:ignore="ContentDescription" />
+
+            <ImageButton android:id="@+id/action_play_pause"
+                style="@style/Widget.AppCompat.Button.Borderless"
+                android:layout_width="48dp"
+                android:layout_height="match_parent"
+                android:layout_marginStart="12dp"
+                android:layout_weight="1"
+                android:background="@drawable/notification_selector"
+                android:gravity="center"
+                android:padding="8dp"
+                android:scaleType="fitCenter"
+                tools:ignore="ContentDescription" />
+
+            <ImageButton android:id="@+id/forwardButton"
+                style="@style/Widget.AppCompat.Button.Borderless"
+                android:layout_width="48dp"
+                android:layout_height="match_parent"
+                android:layout_marginStart="12dp"
+                android:layout_weight="1"
+                android:background="@drawable/notification_selector"
+                android:gravity="center"
+                android:padding="8dp"
+                android:scaleType="fitCenter"
+                tools:ignore="ContentDescription" />
+
+            <ImageButton
+                android:id="@+id/bookmarkButton"
+                android:layout_width="48dp"
+                android:layout_height="match_parent"
+                android:layout_marginStart="12dp"
+                android:layout_marginEnd="12dp"
+                android:layout_weight="1"
+                android:background="@drawable/notification_selector"
+                />
+        </LinearLayout>
+
+        <ProgressBar
+            android:id="@+id/progressBar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:paddingHorizontal="16dp"
+            android:layout_marginTop="16dp"
+            android:progress="10"
+            style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+            android:layout_below="@id/media_actions"
+            />
+
+        <RelativeLayout
+            android:id="@+id/time_tick_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd= "16dp"
+            android:layout_marginTop="6dp"
+            android:layout_below="@id/progressBar">
+            <TextView
+                android:id="@+id/song_elapsed_time"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/FlatWhite"
+                android:text="00:00:00"/>
+
+            <TextView
+                android:id="@+id/song_duration"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:textColor="@color/FlatWhite"
+                android:text="00:00:00"/>
+        </RelativeLayout>
+
+    </RelativeLayout>
+</FrameLayout>

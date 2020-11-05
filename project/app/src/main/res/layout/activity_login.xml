@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical">
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/login_back_image"
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
+        android:adjustViewBounds="true"
+        android:scaleType="centerCrop"
+        android:src="@drawable/login_background" />
+    <androidx.fragment.app.FragmentContainerView
+        android:id="@+id/my_nav_host_login_fragment"
+        android:name="androidx.navigation.fragment.NavHostFragment"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        app:defaultNavHost="true"
+        app:navGraph="@navigation/nav_graph_login" />
+
+    <RelativeLayout
+        android:id="@+id/loadingProgressbarLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/color_transparent_back_80"
+        android:visibility="visible"
+        >
+        <androidx.core.widget.ContentLoadingProgressBar
+            android:id="@+id/loadingProgressbar"
+            style="?android:attr/progressBarStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:visibility="visible" />
+    </RelativeLayout>
+
+</RelativeLayout>

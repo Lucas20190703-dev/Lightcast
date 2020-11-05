@@ -1,0 +1,224 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/root_view">
+
+    <FrameLayout
+        android:id="@+id/quick_controls_frame"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:id="@+id/blurredAlbumart"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="top"
+            android:scaleType="fitXY"
+            android:adjustViewBounds = "true"/>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#80000000" />
+
+        <net.steamcrafted.materialiconlib.MaterialIconView
+            android:id="@+id/closeButton"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_gravity="end"
+            android:layout_marginTop="12dp"
+            android:layout_marginEnd="12dp"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:scaleType="center"
+            app:materialIcon="close"
+            app:materialIconColor="@color/FlatWhite"
+            app:materialIconSize="30dp"
+            android:elevation="10dp"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center_horizontal|center_vertical"
+            android:gravity="center_horizontal|center_vertical"
+            android:orientation="vertical"
+            android:paddingHorizontal="30dp"
+            android:paddingTop="20dp">
+
+            <TextView
+                android:id="@+id/song_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:ellipsize="end"
+                android:maxLines="2"
+                android:textColor="@color/FlatWhite"
+                android:textSize="25sp"
+                android:textStyle="bold"
+                android:gravity="center"
+                />
+
+            <TextView
+                android:id="@+id/song_artist"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:ellipsize="end"
+                android:maxLines="1"
+                android:paddingTop="3dp"
+                android:textColor="@color/FlatWhite"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:gravity="center"/>
+
+            <TextView
+                android:id="@+id/song_album"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="#ffffff"
+                android:visibility="visible"
+                android:gravity="center"/>
+
+
+            <com.blueshark.indicatorseekbar.IndicatorSeekBar
+                android:id="@+id/song_progress"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:paddingHorizontal="6dp"
+                app:isb_indicator_top_content_layout="@layout/custom_top_content_view_round_miles"
+                app:isb_progress="0"
+                app:isb_indicator_color="@color/toolbar_back"
+                app:isb_thumb_color="@color/toolbar_back"
+                app:isb_thumb_size="12dp"
+                app:isb_track_progress_color="@color/toolbar_back"
+                app:isb_clear_default_padding="true"
+                app:isb_show_indicator="rounded_rectangle"
+                />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                >
+                <TextView
+                    android:id="@+id/song_elapsed_time"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/FlatWhite"
+                    android:visibility="visible"
+                    android:layout_alignParentStart="true"/>
+
+                <TextView
+                    android:id="@+id/song_duration"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="#ffffff"
+                    android:visibility="visible"
+                    android:layout_alignParentEnd="true"/>
+            </RelativeLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_gravity="center">
+                <net.steamcrafted.materialiconlib.MaterialIconView
+                    android:id="@+id/expandedBookmark"
+                    android:layout_width="48dp"
+                    android:layout_height="48dp"
+                    android:background="?attr/selectableItemBackgroundBorderless"
+                    android:scaleType="center"
+                    app:materialIcon="bookmark_plus"
+                    app:materialIconColor="@color/toolbar_back"
+                    app:materialIconSize="30dp" />
+
+<!--                <androidx.appcompat.widget.AppCompatSpinner-->
+<!--                    android:layout_width="100dp"-->
+<!--                    android:layout_height="36dp"-->
+<!--                    android:layout_marginStart="50dp"-->
+<!--                    android:entries="@array/player_speed"-->
+<!--                    android:prompt="@string/player_speed_prompt"-->
+<!--                    android:layout_gravity="center"-->
+<!--                    android:popupBackground="@color/FlatWhite"-->
+<!--                    android:backgroundTint="@color/FlatWhite"-->
+<!--                    android:dropDownWidth="match_parent"-->
+<!--                    android:dropDownSelector="@color/color_light_gray"-->
+<!--                    />-->
+                <androidx.appcompat.widget.AppCompatSpinner
+                    android:id="@+id/spinner"
+                    android:layout_width="70dp"
+                    android:layout_height="30dp"
+                    android:layout_gravity="center"
+                    android:layout_marginStart="80dp"
+                    android:background="@drawable/spinner_dropdown_back"
+                    android:dropDownVerticalOffset = "0dp"
+                    android:gravity="bottom"
+                    android:spinnerMode="dropdown"
+                    android:layoutMode="clipBounds"
+                    />
+
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal|center_vertical"
+                android:orientation="horizontal"
+                android:paddingTop="20dp">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/expandedBackward"
+                    android:layout_width="48dp"
+                    android:layout_height="48dp"
+                    android:layout_weight="0.7"
+                    android:paddingVertical="8dp"
+                    android:background="?attr/selectableItemBackgroundBorderless"
+                    android:src="@drawable/ic_replay_10_white_24dp"
+                    android:tint="@color/FlatWhite"
+                    />
+
+                <FrameLayout
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:layout_marginStart="5dp"
+                    android:layout_marginEnd="5dp"
+                    android:layout_weight="1">
+
+                    <com.blueshark.lightcast.ui.player.widget.PlayPauseButton
+                        android:id="@+id/playpause"
+                        android:layout_width="26dp"
+                        android:layout_height="26dp"
+                        android:layout_gravity="center" />
+
+                    <View
+                        android:id="@+id/playpausewrapper"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="?attr/selectableItemBackgroundBorderless" />
+
+                </FrameLayout>
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/expandedForward"
+                    android:layout_width="48dp"
+                    android:layout_height="48dp"
+                    android:layout_weight="0.7"
+                    android:background="?attr/selectableItemBackgroundBorderless"
+                    android:paddingVertical="8dp"
+                    android:src="@drawable/ic_forward_30_white_24dp"
+                    android:tint="@color/FlatWhite"
+                    />
+
+
+            </LinearLayout>
+
+        </LinearLayout>
+    </FrameLayout>
+
+
+    <include layout="@layout/bottom_nowplaying_card" />
+
+
+</FrameLayout>
+
+
